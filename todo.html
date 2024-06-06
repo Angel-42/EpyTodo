@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="main">
+        <h1>Todo</h1>
+        <div class="wrap">
+            <input id="taskName" type="text" placeholder="Enter task name">
+            <button onclick="addTask()">Add Task</button>
+            <div class="column" id="enCours"><span class="columnName">En Cours</span></div>
+            <div class="column" id="fait"><span class="columnName">Fait</span></div>
+        </div>
+    </div>
+
+    <script>
+        function addTask() {
+            var taskName = document.getElementById("taskName").value;
+            var newTask = document.createElement("div");
+            newTask.className = "task";
+            var deleteButton = document.createElement("button");
+            deleteButton.textContent = "X";
+            deleteButton.className = "deleteButton";
+            deleteButton.onclick = function() {
+                newTask.remove();
+            };
+            var doneButton = document.createElement("button");
+            doneButton.textContent = "V";
+            doneButton.className = "doneButton";
+            doneButton.onclick = function() {
+                document.getElementById("fait").appendChild(newTask);
+            };
+            newTask.prepend(deleteButton);
+            newTask.prepend(doneButton);
+            var taskText = document.createTextNode(taskName);
+            newTask.appendChild(taskText);
+            document.getElementById("enCours").appendChild(newTask);
+            document.getElementById("taskName").value = "";
+}
+    </script>
+</body>
+
+</html>

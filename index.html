@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML Login Form</title>
+    <link rel="stylesheet"
+          href="style.css">
+</head>
+
+<body>
+    <div class="image">
+    </div>
+    <div class="main">
+        <h1>Epytodo</h1>
+        <h3>Login</h3>
+        <form onsubmit="return redirectToOfficialSite()">
+        <form action="">
+            <label for="first">
+                  Username:
+              </label>
+            <input type="text"
+                   id="first"
+                   name="first"
+                   placeholder="Enter your Username" required>
+
+            <label for="password">
+                  Password:
+              </label>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter your Password" required>
+
+            <div class="wrap">
+                <button type="submit"
+                        onclick="solve()">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    <script>
+    function redirectToOfficialSite() {
+        event.preventDefault();
+        window.location.href = "todo.html";
+        return false;
+    }
+</script>
+</body>
+
+</html>
+
